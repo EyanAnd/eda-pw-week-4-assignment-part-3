@@ -40,8 +40,24 @@ console.log('Test - should call the basket array which should be empty', basket)
 
 // create a function called isFull().
 function isFull() {
+    // set it so that isFull will return true if the amount of items in the basket is greter than or equal to 5.
     return basket.length >= maxItems;
 }
  console.log('Test - should return false', isFull()); // test
 
-
+// create a function called removeItem that takes an item parameter
+function removeItem( item ) {
+    // created a new variable with the value of indexOf to find the first match in the array
+  let match = basket.indexOf(item);
+  // created a conditional statement that returns null if there is no match within the basekt array.
+  if (match === -1) {
+    return null;
+  } 
+  // used the splice method in order to return the matching value from the basket array.
+  return basket.splice(match, 1)[0];
+}
+addItem('corn'); // test
+addItem('egg'); // test
+addItem('cheese'); // test
+console.log(removeItem('corn'));
+console.log(removeItem('rice'));
